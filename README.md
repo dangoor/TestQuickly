@@ -1,4 +1,4 @@
-A trivial Brackets extension that adds a "Quick Tests" menu item (with ctrl/cmd-P shortcut)
+A trivial Brackets extension that adds a shortcut Cmd/Ctrl-P
 for running tests that are referred to by the current file.
 
 To tell the extension which tests should be run, add a specially formatted comment to the file.

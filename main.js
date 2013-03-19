@@ -27,9 +27,8 @@
 define(function (require, exports, module) {
     "use strict";
     var CommandManager       = brackets.getModule("command/CommandManager"),
-        Menus                = brackets.getModule("command/Menus"),
-        DocumentManager      = brackets.getModule("document/DocumentManager"),
-        DebugCommandHandlers = brackets.getModule("debug/DebugCommandHandlers");
+        KeyBindingManager    = brackets.getModule("command/KeyBindingManager"),
+        DocumentManager      = brackets.getModule("document/DocumentManager");
     
     var unittestRegex = /\/\*\s*unittests:\s*([\w\s]+)\s*\*\//;
     
@@ -38,13 +37,13 @@ define(function (require, exports, module) {
         var text = doc.getText();
         var match = unittestRegex.exec(text);
         var suite = match !== null ? match[1] : "";
-        DebugCommandHandlers._runUnitTests(suite);
+        CommandManager.execute("debug.runUnitTests", suite); // hard-coded string from DebugCommands extension
     }
     
     function init() {
-        var command = CommandManager.register("Quick Tests", "dangoor.testquickly.quicktests", runTests);
-        var debugMenu = Menus.getMenu(Menus.AppMenuBar.DEBUG_MENU);
-        debugMenu.addMenuItem(command, "Ctrl-P", Menus.AFTER, "debug.runUnitTests");
+        var commandId = "dangoor.testquickly.quicktests",
+            command = CommandManager.register("Quick Tests", commandId, runTests);
+        KeyBindingManager.addBinding(commandId, { key: "Cmd-P" });
     }
     
     init();
