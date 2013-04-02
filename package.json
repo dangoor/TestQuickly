@@ -1,0 +1,9 @@
+{
+	"name": "TestQuickly",
+	"description": "Launches the test runner (or re-runs tests) with a keypress",
+	"version": "1.0.0",
+	"author": {
+		"name": "Kevin Dangoor",
+		"email": "dangoor@adobe.com"
+	}
+}
