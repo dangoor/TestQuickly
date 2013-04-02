@@ -1,5 +1,6 @@
 {
-	"name": "TestQuickly",
+	"name": "test-quickly",
+	"title": "TestQuickly",
 	"description": "Launches the test runner (or re-runs tests) with a keypress",
 	"version": "1.0.0",
 	"author": {
