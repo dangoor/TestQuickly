@@ -3,6 +3,7 @@
 	"title": "TestQuickly",
 	"description": "Launches the test runner (or re-runs tests) with a keypress",
 	"version": "1.0.2",
+    "homepage": "https://github.com/dangoor/TestQuickly",
 	"author": {
 		"name": "Kevin Dangoor",
 		"email": "dangoor@adobe.com"
